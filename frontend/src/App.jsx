@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import HomePage from "./pages/HomePage"
 import ProductPage from "./pages/ProductPage"
 import { useThemeStore } from "./store/useThemeStore"
+import { Toaster } from "react-hot-toast"
 export default function App() {
 
   const {theme} = useThemeStore()
@@ -13,8 +14,9 @@ export default function App() {
       <Navbar/>
       <Routes>
           <Route path='/' element={<HomePage/>}/>
-          <Route path='/products' element={<ProductPage/>}/>
+          <Route path='/product/:id' element={<ProductPage/>}/>
       </Routes>
+      <Toaster/>
     </div>
   )
 }

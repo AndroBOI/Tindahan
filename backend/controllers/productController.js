@@ -91,7 +91,7 @@ export const deleteProduct = async (req, res) => {
             DELETE FROM products WHERE id=${id} RETURNING *
             `
 
-        if(deleteProduct.length === 0) {
+        if(deletedProduct.length === 0) {
             return res.status(404).json({
                 success: false,
                 message: "Product not found"
